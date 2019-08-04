@@ -1,0 +1,27 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+V1 DB 'JuNaEiD $'
+V2 DB 'SAKIB $'
+V3 DB 'RUHUL $' 
+V4 DB ?
+.CODE
+MAIN PROC
+    MOV AH,1
+    INT 21H
+    MOV V4,AL
+    
+    MOV AH,2
+    MOV DL,'2'
+    INT 21H
+    
+    SUB V4,17
+    MOV DL,V4
+    INT 21H
+    
+    
+    EXIT :
+    MOV AH,4CH
+    INT 21H
+    MAIN ENDP
+END MAIN
